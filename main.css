@@ -1,0 +1,9 @@
+body {
+  margin: 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url(https://cdn.statically.io/img/statically.io/images/misc/clouds.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: initial;
+  height: 100vh;
+}
