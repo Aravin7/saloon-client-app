@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Home from './container/Home';
-import Booking from './container/Booking';
+import Booking from './container/authUser/Booking';
 import Contact from './container/Contact';
 import Services from './container/Services';
 import Register from './container/Register';

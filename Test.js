@@ -8,8 +8,9 @@ import { Header } from './Header';
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { routes } from './routes';
+import Navigation from './container/Navigation';
 import Home from './container/Home';
-import Booking from './container/Booking';
+import Booking from './container/authUser/Booking';
 import Contact from './container/Contact';
 import Services from './container/Services';
 
@@ -21,17 +22,8 @@ export const Test = () => {
       <Header />
       <Box sx={{ display: 'flex' }}>
         <Box className={'nav'}>
-          <List>
-            {routes.map((item, index) => (
-              <Link to={item.path}>
-                <ListItem button key={index}>
-                  <ListItemText primary={item.displayName} />
-                </ListItem>
-              </Link>
-            ))}
-          </List>
+          <Navigation />
         </Box>
-        {/* </Drawer> */}
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
           <Switch>
             {routes.map((item, index) => {

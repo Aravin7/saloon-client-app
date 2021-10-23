@@ -28,11 +28,11 @@ h6 {
   padding: 10px 24px;
 }
 
-.nav ul a:nth-last-child(1),
+/* .nav ul a:nth-last-child(1),
 .nav ul a:nth-last-child(3),
 .nav ul a:nth-last-child(4) {
   display: none;
-}
+} */
 
 .logo {
   width: 150px;
