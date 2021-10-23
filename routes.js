@@ -8,7 +8,7 @@ import SignIn from './container/SignIn';
 import ForgotPassword from './container/ForgotPassword';
 import EntryPage from './container/EntryPage';
 
-export const routes = [
+const routes = [
   {
     path: '/',
     displayName: 'HOME',
@@ -82,3 +82,5 @@ export const routes = [
     ),
   },
 ];
+
+export default routes;
