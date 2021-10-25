@@ -1,4 +1,5 @@
 import * as React from 'react';
+import '../../main.css';
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
@@ -83,22 +84,28 @@ const Dashboard = () => {
     setOpen(false);
   };
 
+  // <Box>
+  //   <Box>App bar</Box>
+  //   <Box>content</Box>
+  // </Box>
   return (
     <Box sx={{ display: 'flex' }}>
       {/* <CssBaseline /> */}
       {/* <AppBar position="fixed"</AppBar> */}
-      <Toolbar open={open}>
-        <IconButton
-          color="inherit"
-          aria-label="open drawer"
-          onClick={handleDrawerOpen}
-          edge="start"
-          sx={{ mr: 2, ...(open && { display: 'none' }) }}
-        >
-          {/* Burger Icon */}
-          <MenuIcon />
-        </IconButton>
-      </Toolbar>
+      <Box sx={{ display: 'flex' }}>
+        <Toolbar open={open}>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            onClick={handleDrawerOpen}
+            edge="start"
+            sx={{ mr: 1, ...(open && { display: 'none' }) }}
+          >
+            {/* Burger Icon */}
+            <MenuIcon />
+          </IconButton>
+        </Toolbar>
+      </Box>
       <Drawer
         sx={{
           width: drawerWidth,
@@ -112,15 +119,16 @@ const Dashboard = () => {
         anchor="left"
         open={open}
       >
-        <DrawerHeader>
-          <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'ltr' ? (
-              <ChevronLeftIcon />
-            ) : (
-              <ChevronRightIcon />
-            )}
-          </IconButton>
-        </DrawerHeader>
+        {/* <DrawerHeader> */}
+        <IconButton onClick={handleDrawerClose}>
+          <h4>Ak saloon Logo</h4>
+          {theme.direction === 'ltr' ? (
+            <ChevronLeftIcon />
+          ) : (
+            <ChevronRightIcon />
+          )}
+        </IconButton>
+        {/* </DrawerHeader> */}
         <Divider />
 
         {/* {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
@@ -145,18 +153,20 @@ const Dashboard = () => {
           ))}
         </List> */}
       </Drawer>
-      <Main open={open}>
-        <DrawerHeader />
-        <Switch>
-          {routes.map((item, index) => {
-            return (
-              <Route exact key={index} path={item.path}>
-                {item.component}
-              </Route>
-            );
-          })}
-        </Switch>
-      </Main>
+      <Box>
+        <Main open={open}>
+          {/* <DrawerHeader /> */}
+          <Switch>
+            {routes.map((item, index) => {
+              return (
+                <Route exact key={index} path={item.path}>
+                  {item.component}
+                </Route>
+              );
+            })}
+          </Switch>
+        </Main>
+      </Box>
     </Box>
   );
 };

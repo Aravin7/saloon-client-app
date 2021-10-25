@@ -29,9 +29,9 @@ const Navigation = () => {
   return (
     <>
       <List>
-        {navList.map((item, index) => (
+        {navList.map((item) => (
           <Link to={item.path}>
-            <ListItem button key={index}>
+            <ListItem button key={item.displayName}>
               <ListItemText primary={item.displayName} />
             </ListItem>
           </Link>
