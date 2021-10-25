@@ -22,12 +22,16 @@ h6 {
 }
 
 .topBar {
-  width: 100%;
+  /* width: 100%;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap; */
   background-color: #08000009;
 }
 
+.topBar div div {
+  display: flex;
+  flex-wrap: wrap;
+}
 /* Drawer box style */
 .css-12i7wg6-MuiPaper-root-MuiDrawer-paper {
   background-color: #fdf0f0;
