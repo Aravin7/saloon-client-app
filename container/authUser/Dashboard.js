@@ -29,7 +29,7 @@ const drawerWidth = 240;
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
   ({ theme, open }) => ({
-    flexGrow: 1,
+    // flexGrow: 1,
     padding: theme.spacing(3),
     transition: theme.transitions.create('margin', {
       easing: theme.transitions.easing.sharp,
@@ -93,18 +93,21 @@ const Dashboard = () => {
       {/* <CssBaseline /> */}
       {/* <AppBar position="fixed"</AppBar> */}
       <Box sx={{ display: 'flex' }}>
-        <Toolbar open={open}>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            sx={{ mr: 1, ...(open && { display: 'none' }) }}
-          >
-            {/* Burger Icon */}
-            <MenuIcon />
-          </IconButton>
-        </Toolbar>
+        <AppBar className={'topBar'}>
+          <Toolbar open={open}>
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              onClick={handleDrawerOpen}
+              edge="start"
+              sx={{ mr: 1, ...(open && { display: 'none' }) }}
+            >
+              {/* Burger Icon */}
+              <MenuIcon />
+            </IconButton>
+            
+          </Toolbar>
+        </AppBar>
       </Box>
       <Drawer
         sx={{
@@ -153,9 +156,9 @@ const Dashboard = () => {
           ))}
         </List> */}
       </Drawer>
-      <Box>
+      <Box className={'main'}>
         <Main open={open}>
-          {/* <DrawerHeader /> */}
+          <DrawerHeader />
           <Switch>
             {routes.map((item, index) => {
               return (

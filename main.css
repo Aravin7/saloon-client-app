@@ -16,3 +16,26 @@ h5,
 h6 {
   margin: 0px;
 }
+
+.main {
+  display: flex;
+}
+
+.topBar {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #08000009;
+}
+
+/* Drawer box style */
+.css-12i7wg6-MuiPaper-root-MuiDrawer-paper {
+  background-color: #fdf0f0;
+  color: rgb(243, 239, 239);
+}
+
+/* App Bar Style */
+.css-lmlme2-MuiPaper-root-MuiAppBar-root {
+  box-shadow: none;
+  color: #fff;
+}
