@@ -85,23 +85,20 @@ const Dashboard = () => {
 
   return (
     <Box sx={{ display: 'flex' }}>
-      <CssBaseline />
-      <AppBar position="fixed" open={open}>
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            sx={{ mr: 2, ...(open && { display: 'none' }) }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            Persistent drawer
-          </Typography>
-        </Toolbar>
-      </AppBar>
+      {/* <CssBaseline /> */}
+      {/* <AppBar position="fixed"</AppBar> */}
+      <Toolbar open={open}>
+        <IconButton
+          color="inherit"
+          aria-label="open drawer"
+          onClick={handleDrawerOpen}
+          edge="start"
+          sx={{ mr: 2, ...(open && { display: 'none' }) }}
+        >
+          {/* Burger Icon */}
+          <MenuIcon />
+        </IconButton>
+      </Toolbar>
       <Drawer
         sx={{
           width: drawerWidth,
@@ -151,14 +148,14 @@ const Dashboard = () => {
       <Main open={open}>
         <DrawerHeader />
         <Switch>
-            {routes.map((item, index) => {
-              return (
-                <Route exact key={index} path={item.path}>
-                  {item.component}
-                </Route>
-              );
-            })}
-          </Switch>
+          {routes.map((item, index) => {
+            return (
+              <Route exact key={index} path={item.path}>
+                {item.component}
+              </Route>
+            );
+          })}
+        </Switch>
       </Main>
     </Box>
   );
