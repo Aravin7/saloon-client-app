@@ -7,7 +7,7 @@ import ListItemText from '@mui/material/ListItemText';
 import { Header } from './Header';
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import { routes } from './routes';
+import routes from './routes';
 import Navigation from './container/Navigation';
 import Home from './container/Home';
 import Booking from './container/authUser/Booking';
